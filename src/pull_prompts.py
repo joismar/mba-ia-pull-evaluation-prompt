@@ -14,18 +14,35 @@ import sys
 from pathlib import Path
 from dotenv import load_dotenv
 from langchain import hub
-from utils import save_yaml, check_env_vars, print_section_header
 
 load_dotenv()
 
-
 def pull_prompts_from_langsmith():
-    ...
-
+    """Faz pull dos prompts do LangSmith Prompt Hub."""
+    prompt_name = "leonanluppi/bug_to_user_story_v1"
+    print(f"Fazendo pull do prompt: {prompt_name}")
+    
+    # Faz o pull do prompt do hub
+    prompt = hub.pull(prompt_name, api_key=os.getenv("LANGSMITH_API_KEY"), api_url=os.getenv("LANGSMITH_ENDPOINT"))
+    
+    # Define o caminho de destino
+    output_dir = Path("prompts")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "bug_to_user_story_v1.yml"
+    
+    # Salva o prompt localmente
+    print(f"Salvando prompt em: {output_path}")
+    prompt.save(str(output_path))
+    print("Prompt salvo com sucesso!")
 
 def main():
     """Função principal"""
-    ...
+    try:
+        pull_prompts_from_langsmith()
+        return 0
+    except Exception as e:
+        print(f"Erro ao executar o script: {e}")
+        return 1
 
 
 if __name__ == "__main__":
