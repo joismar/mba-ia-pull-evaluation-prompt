@@ -59,13 +59,13 @@ Durante o processo de otimização do prompt para a versão `v2`, foram utilizad
 Foram realizadas 6 iterações de otimização. A evolução do prompt pode ser vista em: https://smith.langchain.com/hub/joismar/bug_to_user_story_v2. Após as iterações, a versão `v2` do prompt atingiu as seguintes pontuações:
 
 ### Screenshots das avaliações:
-![Avaliacao 1](image-1.png)
+![Avaliacao 1](image.png)
 
 ### Tracing do Langsmith:
-![Imagem 1](langsmith_prints\image1.png)
-![Imagem 2](langsmith_prints\image2.png)
-![Imagem 3](langsmith_prints\image3.png)
-![Imagem 4](langsmith_prints\image4.png)
+![Imagem 1](langsmith_prints/image1.png)
+![Imagem 2](langsmith_prints/image2.png)
+![Imagem 3](langsmith_prints/image3.png)
+![Imagem 4](langsmith_prints/image4.png)
 
 ## Como Executar
 
